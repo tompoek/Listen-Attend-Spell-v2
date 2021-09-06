@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "train.py", line 181, in <module>
+    main()
+  File "train.py", line 177, in main
+    train_net(args)
+  File "train.py", line 84, in train_net
+    valid_loss = valid(valid_loader=valid_loader,
+  File "train.py", line 156, in valid
+    loss = model(features, input_lengths, trns)
+  File "C:\ProgramData\Miniconda3\lib\site-packages\torch\nn\modules\module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\repos\Listen-Attend-Spell-v2\models.py", line 23, in forward
+    encoder_padded_outputs, _ = self.encoder(padded_input, input_lengths)
+  File "C:\ProgramData\Miniconda3\lib\site-packages\torch\nn\modules\module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\ProgramData\Miniconda3\lib\site-packages\torch\nn\parallel\data_parallel.py", line 166, in forward
+    return self.module(*inputs[0], **kwargs[0])
+  File "C:\ProgramData\Miniconda3\lib\site-packages\torch\nn\modules\module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\repos\Listen-Attend-Spell-v2\models.py", line 56, in forward
+    packed_output, hidden = self.rnn(packed_input)
+  File "C:\ProgramData\Miniconda3\lib\site-packages\torch\nn\modules\module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\ProgramData\Miniconda3\lib\site-packages\torch\nn\modules\rnn.py", line 840, in forward
+    result = _VF.gru(input, batch_sizes, hx, self._flat_weights, self.bias,
+RuntimeError: cuDNN error: CUDNN_STATUS_EXECUTION_FAILED

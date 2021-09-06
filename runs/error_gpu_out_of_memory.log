@@ -1,0 +1,30 @@
+(base) C:\repos\Listen-Attend-Spell-v2>python train.py
+C:\ProgramData\Miniconda3\lib\site-packages\torch\utils\data\dataloader.py:478: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 4 (`cpuset` is not taken into account), which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+2021-08-18 09:38:18,673 INFO    Epoch: [0][0/3754]      Loss 8.3809 (8.3809)
+Traceback (most recent call last):
+  File "train.py", line 161, in <module>
+    main()
+  File "train.py", line 157, in main
+    train_net(args)
+  File "train.py", line 62, in train_net
+    train_loss = train(train_loader=train_loader,
+  File "train.py", line 107, in train
+    loss = model(features, input_lengths, trns)
+  File "C:\ProgramData\Miniconda3\lib\site-packages\torch\nn\modules\module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\repos\Listen-Attend-Spell-v2\models.py", line 24, in forward
+    loss = self.decoder(padded_target, encoder_padded_outputs)
+  File "C:\ProgramData\Miniconda3\lib\site-packages\torch\nn\modules\module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\ProgramData\Miniconda3\lib\site-packages\torch\nn\parallel\data_parallel.py", line 166, in forward
+    return self.module(*inputs[0], **kwargs[0])
+  File "C:\ProgramData\Miniconda3\lib\site-packages\torch\nn\modules\module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\repos\Listen-Attend-Spell-v2\models.py", line 130, in forward
+    h_list[0], c_list[0] = self.rnn[0](
+  File "C:\ProgramData\Miniconda3\lib\site-packages\torch\nn\modules\module.py", line 1051, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "C:\ProgramData\Miniconda3\lib\site-packages\torch\nn\modules\rnn.py", line 1055, in forward
+    return _VF.lstm_cell(
+RuntimeError: CUDA out of memory. Tried to allocate 2.00 MiB (GPU 0; 5.00 GiB total capacity; 2.14 GiB already allocated; 396.80 KiB free; 3.56 GiB reserved in total by PyTorch)

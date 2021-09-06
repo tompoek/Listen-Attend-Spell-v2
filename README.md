@@ -36,21 +36,17 @@ $ wget http://www.openslr.org/resources/33/data_aishell.tgz
 ```
 
 ## Dependencies
-- Python 3.6
-- PyTorch 1.0.0
+- python 3.8.5
+- pytorch 1.9.0
+- cudatoolkit 11.1.1
+- cudnn 8.2.1.32
 
 ## Usage
 
 ### Data wrangling
-Extract data_aishell.tgz:
+Extract data_aishell.tgz, then extract all xxx.tar.gz as xxx.wav files into train/dev/test folders:
 ```bash
 $ python extract.py
-```
-
-Extract wav files into train/dev/test folders:
-```bash
-$ cd data/data_aishell/wav
-$ find . -name '*.tar.gz' -execdir tar -xzvf '{}' \;
 ```
 
 Scan transcript data, generate features:

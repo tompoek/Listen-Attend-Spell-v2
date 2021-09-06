@@ -35,7 +35,7 @@ if __name__ == '__main__':
     IVOCAB = data['IVOCAB']
     samples = data['test']
 
-    samples = random.sample(samples, 10)
+    samples = random.sample(samples, 1)
 
     ensure_folder('waves')
 

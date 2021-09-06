@@ -16,9 +16,9 @@ num_layers = 4
 # Training parameters
 batch_size = 32
 lr = 1e-3
-num_workers = 8  # for data-loading
+num_workers = 4 if device == torch.device('cuda') else 0  # for data-loading
 grad_clip = 5.  # clip gradients at an absolute value of
-print_freq = 10  # print training/validation stats  every __ batches
+print_freq = 20  # print training/validation stats  every __ batches
 checkpoint = None  # path to checkpoint, None if none
 
 # Data parameters

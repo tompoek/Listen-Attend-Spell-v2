@@ -50,6 +50,7 @@ class Encoder(nn.Module):
         total_length = input_x.size(1)  # get the max sequence length
         # print('total_length: ' + str(total_length))
         # print('input_x.size(): ' + str(input_x.size()))
+        enc_len = enc_len.cpu()
         packed_input = pack_padded_sequence(input_x, enc_len, batch_first=True)
         # print('enc_len: ' + str(enc_len))
         packed_output, hidden = self.rnn(packed_input)
